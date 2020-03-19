@@ -11,15 +11,16 @@ class ListOfItems extends Component {
         return ( 
             <div>
                 <div>
+                    {/* iterating through each arrray passed down from the parent component using map */}
                 {
             
                 this.props.itemsForSellArray.map((item,idx) =>{
                     return(
                         <div key={idx}>
-                            <h3>Items For Sell</h3>
-                          <p>Product: {item.productTitle}</p>
-                          <p>Price: {item.productPrice}</p> 
-                          <p>Condition: {item.condition}</p>   
+                            <h2 className='purple'>Items For Sell</h2>
+                          <p className='blue'>Product: {item.productTitle}</p>
+                          <p className='blue'>Price: {item.productPrice}</p> 
+                          <p className='blue'>Condition: {item.condition}</p>   
                         </div>
                     )
                 }
@@ -31,8 +32,9 @@ class ListOfItems extends Component {
                         this.props.itemsOfferArray.map((offer,index) =>{
                             return(
                                 <div key={index}>
-                                    <p>Title: {offer.offerTitle}</p>
-                                    <p>Offer Price: {offer.offerPrice}</p>
+                                    <h2 className='purple'>Product Offers</h2>
+                                    <p className='blue'>Title: {offer.productOfferTitle}</p>
+                                    <p className='blue'>Offer Price: {offer.productOfferPrice}</p>
                                 </div>
                             )
                         }

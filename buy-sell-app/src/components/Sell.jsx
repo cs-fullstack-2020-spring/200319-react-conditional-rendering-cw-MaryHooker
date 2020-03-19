@@ -11,6 +11,7 @@ class Sell extends Component {
         }
     }
 
+    //function that handles the change of all inputs and updates the current state of each property
     handleInputs = (event) => {
         if (event.target.name === 'productTitle') {
             this.setState(
@@ -33,6 +34,7 @@ class Sell extends Component {
         }
     }
 
+    //function that handles the submission button by updating the properties and pushing them to the above array
     handleSubmission = (event) => {
         event.preventDefault();
 
@@ -57,7 +59,7 @@ class Sell extends Component {
 
         //reset the form
         this.setState(
-            {
+            {   //setting initial state of properties
                 productTitle: '',
                 productPrice: '',
                 condition: '', 
@@ -69,22 +71,26 @@ class Sell extends Component {
         return (
             <div>
                 <form action="">
-                    <fieldset>
-                        <legend>Sell an item</legend>
+                    <fieldset className='fieldset'>
+                        <legend className='legend'>Sell an item</legend>
+                        <br/>
                         <div>
-                            <label htmlFor="productTitle">Product Title: </label>
-                            <input type="text" name='productTitle' value={this.state.productTitle} onChange={this.handleInputs} />
+                            <label htmlFor="productTitle" className='labels'>Product Title: </label>
+                            <input type="text" name='productTitle' value={this.state.productTitle} onChange={this.handleInputs} className='inputs' />
                         </div>
+                        <br/>
                         <div>
-                            <label htmlFor="productPrice">Product Price: </label>
-                            <input type="text" name='productPrice' value={this.state.productPrice} onChange={this.handleInputs} />
+                            <label htmlFor="productPrice" className='labels'>Product Price: </label>
+                            <input type="text" name='productPrice' value={this.state.productPrice} onChange={this.handleInputs} className='inputs'/>
                         </div>
+                        <br/>
                         <div>
-                            <label htmlFor="condition">Product Condition: </label>
-                            <input type="text" name='condition' value={this.state.condition} onChange={this.handleInputs} />
+                            <label htmlFor="condition" className='labels'>Product Condition: </label>
+                            <input type="text" name='condition' value={this.state.condition} onChange={this.handleInputs} className='inputs'/>
                         </div>
+                        <br/>
 
-                        <button onClick={this.handleSubmission}>Sell Item</button>
+                        <button onClick={this.handleSubmission} className='button'>Sell Item</button>
                     </fieldset>
                 </form>
             </div>

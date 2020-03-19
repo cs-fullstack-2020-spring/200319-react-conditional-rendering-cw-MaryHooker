@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(200, 200, 82);
+    color: rgb(14, 83, 14);
+    font-family: serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.inputs{
+    background-color: rgb(200, 200, 82);
+    color: rgb(14, 83, 14);
+    border: 3px solid rgb(14, 83, 14);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.fieldset{
+    border: 5px solid rgb(14, 83, 14);
+}
+
+.button{
+    background-color: rgb(14, 83, 14);
+    color: rgb(200, 200, 82);
+    height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: serif;
+}
+
+.legend{
+    font-size: 30px;
+}
+
+.title{
+    font-size: 38px;
+}
+
+.labels{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.purple{
+    color: rgb(122, 35, 122);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.blue{
+    color: rgb(34, 34, 146);
+    font-size: 18px;
+    font-weight: bold;
+}
