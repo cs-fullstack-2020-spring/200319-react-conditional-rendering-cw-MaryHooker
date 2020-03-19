@@ -1,5 +1,6 @@
 # 20-03-19 React Conditional Rendering CW
-
+### If the toggle forms the component to render is loaded - because we aren't dealing with a backend that means the array is empty (its' initial state) on reload. SO if I enter multiple items in your form without toggling forms your app appears to work great BUT if I toggle forms my pervious item to sell is overridden by the new one. Be sure to test thoroughly! You can fix this by maintaining the state of the item arrays in your parent component(aka just passing objects up instead of whole array) since it won't reload unless you reload the page.
+### Score : 4/5
 #### Set Up
 - Create a react app called buy-sell-app
 - Create a class based component called `AppContainer` that displays an h1 tag with the text `Buy Sell App`
