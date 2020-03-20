@@ -7,7 +7,7 @@ class Sell extends Component {
             productTitle: '',
             productPrice: '',
             condition: '',
-            itemsForSellArray: [],
+            
         }
     }
 
@@ -38,24 +38,12 @@ class Sell extends Component {
     handleSubmission = (event) => {
         event.preventDefault();
 
-        this.state.itemsForSellArray.push(
-            {
-                productTitle: this.state.productTitle,
-                productPrice: this.state.productPrice,
-                condition: this.state.condition,
-            }
-        )
-        //update the current state of the array
-        this.setState(
-            {
-                itemsForSellArray: this.state.itemsForSellArray
-            }
-        )
-        //sanity
-        console.log(this.state.itemsForSellArray)
+       
 
         //reference the call back function and send current array up to parent
-        this.props.updateItemsForSellArray(this.state.itemsForSellArray)
+        this.props.updateItemsForSellArray(this.state)
+        // this.props.updateItemsForSellArray(this.state.productPrice)
+        // this.props.updateItemsForSellArray(this.state.condition)
 
         //reset the form
         this.setState(

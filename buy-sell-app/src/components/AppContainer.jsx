@@ -15,18 +15,22 @@ class AppContainer extends Component {
         }
     }
     //call back function to update array from child component
-    updateItemsForSellArray = (updatedArray) => {
+    updateItemsForSellArray = (object) => {
+        this.state.itemsForSellArray.push(object);
+
         this.setState(
             {
-                itemsForSellArray: updatedArray
+                itemsForSellArray: this.state.itemsForSellArray
             }
         )
     }
     //call back function to update array from child component
-    updateItemsOfferArray = (updatedArray) => {
+    updateItemsOfferArray = (object) => {
+        this.state.itemsOfferArray.push(object);
+        
         this.setState(
             {
-                itemsOfferArray: updatedArray
+                itemsOfferArray: this.state.itemsOfferArray
             }
         )
     }

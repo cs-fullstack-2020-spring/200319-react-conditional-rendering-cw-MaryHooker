@@ -5,8 +5,8 @@ class Buy extends Component {
         super(props);
         this.state = {
             productOfferTitle: '',
-            productOfferPrice: '',
-            itemsOfferArray: [],
+            productOfferPrice: 0,
+            
         }
     }
     //function that handles the change of all inputs and updates the current state of each property
@@ -29,30 +29,16 @@ class Buy extends Component {
     handleSubmission = (event) => {
         event.preventDefault();
 
-        this.state.itemsOfferArray.push(
-            {
-                productOfferTitle: this.state.productOfferTitle,
-                productOfferPrice: this.state.productOfferPrice,
-                
-            }
-        )
-        //update the current state of the array
-        this.setState(
-            {
-                itemsOfferArray: this.state.itemsOfferArray
-            }
-        )
-        //sanity
-        console.log(this.state.itemsOfferArray)
 
         //reference the call back function and send current array up to parent
-        this.props.updateItemsOfferArray(this.state.itemsOfferArray);
+        this.props.updateItemsOfferArray(this.state);//removed state prop
+        // this.props.updateItemsOfferArray(this.state);//removed state prop
 
         //reset the form
         this.setState(
             {
                 productOfferTitle: '',
-                productOfferPrice: '',
+                productOfferPrice: 0,
             }
         )
     }
@@ -71,7 +57,7 @@ class Buy extends Component {
                         <br/>
                         <div>
                             <label htmlFor="productOfferPrice" className='labels'>Offer Price: </label>
-                            <input type="text" name='productOfferPrice' value={this.state.productOfferPrice} onChange={this.handleInputs} className='inputs'/>
+                            <input type="number" name='productOfferPrice' value={this.state.productOfferPrice} onChange={this.handleInputs} className='inputs'/>
                         </div>
                         <br/>
 

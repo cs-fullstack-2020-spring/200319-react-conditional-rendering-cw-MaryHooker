@@ -10,31 +10,35 @@ class ListOfItems extends Component {
     render() { 
         return ( 
             <div>
+                <h2 className='purple'>Items For Sell</h2>
                 <div>
-                    {/* iterating through each arrray passed down from the parent component using map */}
+                    
                 {
             
                 this.props.itemsForSellArray.map((item,idx) =>{
                     return(
                         <div key={idx}>
-                            <h2 className='purple'>Items For Sell</h2>
+                            
                           <p className='blue'>Product: {item.productTitle}</p>
                           <p className='blue'>Price: {item.productPrice}</p> 
-                          <p className='blue'>Condition: {item.condition}</p>   
+                          <p className='blue'>Condition: {item.condition}</p>
+                          <hr className='sellBreaks'/>   
                         </div>
                     )
                 }
                 )
                 }
                 </div>
+                <h2 className='purple'>Product Offers</h2>
                 <div>
                     {
-                        this.props.itemsOfferArray.map((offer,index) =>{
+                        this.props.itemsOfferArray.map((offer,idx) =>{
                             return(
-                                <div key={index}>
-                                    <h2 className='purple'>Product Offers</h2>
-                                    <p className='blue'>Title: {offer.productOfferTitle}</p>
-                                    <p className='blue'>Offer Price: {offer.productOfferPrice}</p>
+                                <div key={idx}>
+                                    
+                                    <p className='orange'>Title: {offer.productOfferTitle}</p>
+                                    <p className='orange'>Offer Price: {offer.productOfferPrice}</p>
+                                    <hr className='offerBreaks'/>
                                 </div>
                             )
                         }
@@ -42,7 +46,7 @@ class ListOfItems extends Component {
                     }
                 </div>
             </div>
-         );
+         )
     }
 }
  
